@@ -17,7 +17,10 @@ module.exports = {
    * CSS
    */
   css:[
-    '~/styles/common.css'
+    '~/styles/common.css',
+    { src: 'bulma', lang: 'sass' },
+    // 指定 scss 而非 sass
+    { src: '~assets/css/main.scss', lang: 'scss' }
   ],
   /*
   ** Customize the progress bar color
@@ -30,6 +33,7 @@ module.exports = {
     /*
     ** Run ESLint on save
     */
+    vendor: ['bulma'],
     extend (config, ctx) {
       if (ctx.dev && ctx.isClient) {
         config.module.rules.push({
